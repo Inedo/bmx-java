@@ -4,6 +4,7 @@ using System.Web.UI.WebControls;
 using Inedo.BuildMaster.Extensibility.Actions;
 using Inedo.BuildMaster.Web.Controls;
 using Inedo.BuildMaster.Web.Controls.Extensions;
+using Inedo.Web;
 using Inedo.Web.Controls;
 
 namespace Inedo.BuildMasterExtensions.JUnit
@@ -11,7 +12,7 @@ namespace Inedo.BuildMasterExtensions.JUnit
     internal sealed class JUnitActionEditor : ActionEditorBase
     {
         private ValidatingTextBox txtGroupName;
-        private SourceControlFileFolderPicker ctlJavaPath;
+        private FileBrowserTextBox ctlJavaPath;
         private ValidatingTextBox txtExtensionDirectories;
         private ValidatingTextBox txtSearchPattern;
 
@@ -46,7 +47,7 @@ namespace Inedo.BuildMasterExtensions.JUnit
                 Text = this.Plan.Deployable_Name
             };
 
-            this.ctlJavaPath = new SourceControlFileFolderPicker { ServerId = this.ServerId };
+            this.ctlJavaPath = new FileBrowserTextBox { ServerId = this.ServerId };
 
             this.txtExtensionDirectories = new ValidatingTextBox
             {

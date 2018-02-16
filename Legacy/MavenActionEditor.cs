@@ -2,15 +2,15 @@
 using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using Inedo.BuildMaster.Extensibility.Actions;
-using Inedo.BuildMaster.Web.Controls;
 using Inedo.BuildMaster.Web.Controls.Extensions;
+using Inedo.Web;
 using Inedo.Web.Controls;
 
 namespace Inedo.BuildMasterExtensions.Java
 {
     internal sealed class MavenActionEditor : ActionEditorBase
     {
-        private SourceControlFileFolderPicker ctlMavenPath;
+        private FileBrowserTextBox ctlMavenPath;
         private ValidatingTextBox txtAdditionalArguments;
         private ValidatingTextBox txtGoalsAndPhases;
 
@@ -37,7 +37,7 @@ namespace Inedo.BuildMasterExtensions.Java
 
         protected override void CreateChildControls()
         {
-            this.ctlMavenPath = new SourceControlFileFolderPicker
+            this.ctlMavenPath = new FileBrowserTextBox
             {
                 ServerId = this.ServerId,
                 Required = true

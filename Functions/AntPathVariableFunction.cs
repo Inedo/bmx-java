@@ -1,17 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
 using Inedo.Agents;
-using Inedo.BuildMaster.Extensibility;
-using Inedo.BuildMaster.Extensibility.Operations;
-using Inedo.BuildMaster.Extensibility.VariableFunctions;
+using Inedo.Extensibility;
+using Inedo.Extensibility.Operations;
+using Inedo.Extensibility.VariableFunctions;
 
 namespace Inedo.BuildMasterExtensions.Java.Functions
 {
     [ScriptAlias("AntPath")]
     [Description("Returns the full path to ant (or ant.exe on Windows) for the server in context.")]
-    public sealed class AntPathVariableFunction : ScalarVariableFunctionBase
+    public sealed class AntPathVariableFunction : ScalarVariableFunction
     {
-        protected override object EvaluateScalar(IGenericBuildMasterContext context)
+        protected override object EvaluateScalar(IVariableFunctionContext context)
         {
             var operationContext = context as IOperationExecutionContext;
             if (operationContext == null)
